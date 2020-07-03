@@ -7,4 +7,10 @@ use Illuminate\Http\Request;
 class JawabanController extends Controller
 {
     //
+    public function index(){
+        
+    }
+    public function store(){
+
+    }
 }
