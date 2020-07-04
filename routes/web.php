@@ -16,11 +16,16 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-
+//master
 Route::get('/','MasterController@Master');
-Route::get('/item','ItemController@index');
-Route::get('/pertanyaan','PertanyaanController@index');
-Route::get('/pertanyaan/create','PertanyaanController@create');
-Route::post('/pertanyaan/create','PertanyaanController@store');
+//latihan
+Route::get('/items','ItemController@index');//menampilkan semua data
+Route::post('/items','ItemController@store');//menyimpan data
+Route::get('/items/create','ItemController@create');//menampilkan halaman form
+
+//soal 
+Route::get('/pertanyaan','PertanyaanController@index');//menampilkan semua data
+Route::post('/pertanyaan','PertanyaanController@store');//menyimpan data
+Route::get('/pertanyaan/create','PertanyaanController@create');//menampilkan halaman form
 Route::get('/jawaban/{pertanyaan_id}','JawabanController@index');
 Route::post('/jawaban/{pertanyaan_id}','JawabanController@store');

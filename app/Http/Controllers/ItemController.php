@@ -13,5 +13,11 @@ class ItemController extends Controller
         return view('item.index',compact('items'));
     }
 
-
+    public function create(){
+        return view('item.form');
+    }
+    public function store(Request $request){
+        $new_item = ItemModel::save($request->all());
+        return redirect('/items');
+    }
 }

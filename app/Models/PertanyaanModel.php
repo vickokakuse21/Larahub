@@ -3,15 +3,15 @@
 namespace App\Models;
 use Illuminate\Support\Facades\DB;
 
-class ItemModel{
+class PertanyaanModel{
     public static function get_all(){
-        $items = DB::table('items')->get();
-        return $items;
+        $pertanyaan = DB::table('pertanyaan')->get();
+        return $pertanyaan;
     }
     public static function save($data){
         //menghapus data _token
         unset($data["_token"]);
-        $new_item = DB::table('items')->insert($data);
-        return $new_item;
+        $new_pertanyaan = DB::table('pertanyaan')->insert($data);
+        return $new_pertanyaan;
     }
 }
