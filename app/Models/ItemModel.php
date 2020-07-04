@@ -14,4 +14,8 @@ class ItemModel{
         $new_item = DB::table('items')->insert($data);
         return $new_item;
     }
+    public static function find_by_id($id){
+        $item = DB::table('items')->where('id',$id)->first();
+        return $item;
+    }
 }

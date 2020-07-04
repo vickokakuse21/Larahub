@@ -20,4 +20,8 @@ class ItemController extends Controller
         $new_item = ItemModel::save($request->all());
         return redirect('/items');
     }
+    public function show($id){
+        $item = ItemModel::find_by_id($id);
+        return view('item.show',compact('item'));
+    }
 }

@@ -22,10 +22,18 @@ Route::get('/','MasterController@Master');
 Route::get('/items','ItemController@index');//menampilkan semua data
 Route::post('/items','ItemController@store');//menyimpan data
 Route::get('/items/create','ItemController@create');//menampilkan halaman form
+Route::get('/items/{id}','ItemController@show');//menampilkan detail barang
 
-//soal 
+
+//pertanyaan
 Route::get('/pertanyaan','PertanyaanController@index');//menampilkan semua data
 Route::post('/pertanyaan','PertanyaanController@store');//menyimpan data
 Route::get('/pertanyaan/create','PertanyaanController@create');//menampilkan halaman form
+Route::get('/pertanyaan/{id}','PertanyaanController@show');//menampilkan detail pertanyaan
+Route::get('/pertanyaan/{id}/edit','PertanyaanController@edit');//edit pertanyaan
+Route::put('/pertanyaan/{id}','PertanyaanController@update');//menyimpan perubahan(edit)
+Route::delete('/pertanyaan/{id}','PertanyaanController@destroy');//menghapus data
+
+//jawaban
 Route::get('/jawaban/{pertanyaan_id}','JawabanController@index');
 Route::post('/jawaban/{pertanyaan_id}','JawabanController@store');

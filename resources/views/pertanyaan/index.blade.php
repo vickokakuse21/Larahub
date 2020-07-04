@@ -11,6 +11,7 @@
                             <th style="width: 10px">#</th>
                             <th>Judul</th>
                             <th>Isi</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -24,6 +25,15 @@
                                 </td>
                                 <td>
                                     {{$tanya->isi}}
+                                </td>
+                                <td>
+                                    <a href="/pertanyaan/{{$tanya->id}}" class="btn btn-sm btn-info">show</a>
+                                    <a href="/pertanyaan/{{$tanya->id}}/edit" class="btn btn-sm btn-default">edit</a>
+                                    <form action="/pertanyaan/{{$tanya->id}}" method="post" style="display: inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

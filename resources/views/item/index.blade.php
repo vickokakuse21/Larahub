@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
@@ -13,6 +14,7 @@
                             <th>Description</th>
                             <th style="width: 40px">Stock</th>
                             <th style="width: 40px">Price</th>
+                            <th style="width: 40px">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,6 +34,9 @@
                                 </td>
                                 <td>
                                     {{$item->stock}}
+                                </td>
+                                <td>
+                                    <a href="/items/{{$item->id}}" class="btn btn-sm btn-info">show</a>
                                 </td>
                             </tr>
                         @endforeach

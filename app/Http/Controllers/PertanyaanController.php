@@ -20,4 +20,20 @@ class PertanyaanController extends Controller
         $new_pertanyaan = PertanyaanModel::save($request->all());
         return redirect('/pertanyaan');
     }
+    public function show($id){
+        $tanya = PertanyaanModel::find_by_id($id);
+        return view('pertanyaan.show',compact('tanya'));
+    }
+    public function edit($id){
+        $tanya = PertanyaanModel::find_by_id($id);
+        return view('pertanyaan.edit',compact('tanya'));
+    }
+    public function update($id, Request $request){
+        $tanya = PertanyaanModel::update($id, $request->all());
+        return redirect('/pertanyaan');
+    }
+    public function destroy($id){
+        $deleted = PertanyaanModel::destroy($id);
+        return redirect ('/pertanyaan');
+    }
 }
